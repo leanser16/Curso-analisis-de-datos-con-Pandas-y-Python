@@ -21,3 +21,8 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
 [Notebooks de la clase](https://github.com/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/series_indexacion_seleccion_de_datos.ipynb)
 
 <a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/series_indexacion_seleccion_de_datos.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+#### Algunos métodos útiles para filtrar datos
+
+- `sr.isnull().any()` Regresa un booleano indicandonos si existe (TRUE) o no existe (FALSE) algun `nan`
+- `sr[sr.notnull()]` Regresa los valores de la serie que **NO** son nulos.
