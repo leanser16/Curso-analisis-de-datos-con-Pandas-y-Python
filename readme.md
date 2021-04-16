@@ -10,6 +10,11 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
     - [Clase 4. De paneles de datos al DataFrame](#clase-4-de-paneles-de-datos-al-dataframe)
       - [Otros métodos útiles para analizar DataFrames](#otros-métodos-útiles-para-analizar-dataframes)
     - [Clase 5. Indexado y manejo de archivos CSV](#clase-5-indexado-y-manejo-de-archivos-csv)
+    - [Clase 6. Cómo usar Pandas y Python para conectar con tu base de datos SQL](#clase-6-cómo-usar-pandas-y-python-para-conectar-con-tu-base-de-datos-sql)
+      - [PostgreSQL](#postgresql)
+      - [SQL Server](#sql-server)
+      - [MySQL / Oracle / Otras](#mysql--oracle--otras)
+      - [Conectarse a bases de Datos en la nube](#conectarse-a-bases-de-datos-en-la-nube)
 
 
 ## Módulo 1. Comenzando con pandas
@@ -107,3 +112,184 @@ Ambas muestran los mismos resultados pero el primero es mucho más legible que e
 <a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
 [Información IPython Magic Commands](https://platzi.com/tutoriales/1794-pandas/6960-ipython-magics-commands/)
+
+
+### Clase 6. Cómo usar Pandas y Python para conectar con tu base de datos SQL
+
+Pandas cuenta con una funcionalidad que facilita el acceso a tus bases de datos tipo SQL
+
+#### PostgreSQL
+
+Instalar la librería **psycopg2** en caso de que no este instalada con `!pip install psycopg2`.
+
+Luego se importa la librería:
+
+```python
+import pandas as pd
+import psycopg2
+```
+
+Luego se crea la conexión a la DB:
+
+```python
+conn_sql = psycopg2.connect(user = "user_name",
+  password = "password",
+  host = "xxx.xxx.xxx.xxx",
+  port = "5432",
+  database = "postgres_db_name")
+```
+
+Después se puede definir la query en SQL:
+
+```python
+query_sql = '''
+select *
+from table_name
+limit 10
+'''
+```
+
+Por último se crea el DataFrame en base a la query:
+
+```python
+df = pd.read_sql(query_sql, sql_conn)
+df.head(5)
+```
+
+#### SQL Server
+
+Instalar la librería **pyodbc** en caso de que no este instalada con `!pip install pyodbc`.
+
+Importar las librerías:
+
+```python
+import pandas as pd
+import pyodbc
+```
+
+Crear la conexión a la DB:
+
+```python
+river = '{SQL Server}'
+server_name = 'server_name'
+db_name = 'database_name'
+user = 'user'
+password = 'password'
+sql_conn = pyodbc.connect('''
+DRIVER={};SERVER={};DATABASE={};UID={};PWD={};
+Trusted_Connection=yes
+'''.format(driver, server_name, db_name, user, password))
+```
+
+Si se tiene DSN:
+
+```python
+dsn = 'odbc_datasource_name'
+sql_conn = pyodbc.connect('''
+DSN={};UID={};PWD={};Trusted_Connection=yes;
+'''.format(dsn, user, password))
+Seguido simplemente definimos nuestra query en SQL:	
+query_sql = 'select * from table_name limit 10'
+```
+
+Se crea el DataFrame:
+
+```python
+df = pd.read_sql(query_sql, sql_conn)
+df.head(5)
+```
+
+#### MySQL / Oracle / Otras
+
+Instalar la librería **sqlalchemy** en caso de que no este instalada con `!pip install sqlalchemy`.
+
+Cargar las librerías:
+
+```python
+import pandas as pd
+import sqlalchemy as sql
+Escogemos nuestra base de datos, Oracle, MySql o la de tu preferencia:
+database_type = 'mysql'
+database_type = 'oracle'
+```
+
+Se crea la conexión a la DB:
+
+```python
+user = 'user_name'
+password = 'password'
+host = 'xxx.xxx.xxx.xxx:port'
+database = 'database_name'
+
+conn_string = '{}://{}:{}@{}/{}'.format(
+database_type, user, password, host, database)
+
+sql_conn = sql.create_engine(conn_string)
+```
+
+Definir query en SQL:
+
+```python
+query_sql = '''
+select *
+from table_name
+limit 10
+'''
+```
+
+Crear DataFrame:
+
+```python
+df = pd.read_sql(query_sql, sql_conn)
+df.head(5)
+```
+
+_**ℹ Nota: **_ La librería sqlalchemy también soporta PostgreSQL y otras fuentes de datos.
+
+
+#### Conectarse a bases de Datos en la nube
+
+**MySQL**
+
+Instalar **pymysql** con `!pip install pymysql`, después se importa la librería:
+
+```python
+import pymysql
+```
+
+Luego se crea la conexión a la DB:
+
+```python
+conn = pymysql.connect(host=‘YOUR_IP_HOST’, port=DB_PORT, user=‘YOUR_USER’, passwd=‘YOUR_PASSWD’, db=‘YOUR_DB_NAME’)
+```
+
+Después se hace la query a la DB:
+
+```python
+cursor = conn.cursor()
+query = (“select * from YOUR_TABLE_NAME”)
+cursor.execute(query)
+```
+
+**Google Big Query**
+
+Es una práctica recomendable subir los DataFrames a servidores en la nube como por ejemplo BigQuery.
+
+```python
+import pandas as pd
+from pandas.io import gbq
+```
+
+Traer la DB:
+
+```python
+dataset = pd.read_csv('base_datos.csv')
+```
+
+Luego se le pasan los parámetros de BigQuery:
+
+```python
+dataset.to_gbq(destination_table='nombre_de_la_tabla',
+  project_id = 'id_proyecto',
+  if_exists = 'fail')
+```
