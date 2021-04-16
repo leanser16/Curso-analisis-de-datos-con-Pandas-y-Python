@@ -9,6 +9,7 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
       - [Algunos métodos útiles para filtrar datos](#algunos-métodos-útiles-para-filtrar-datos)
     - [Clase 4. De paneles de datos al DataFrame](#clase-4-de-paneles-de-datos-al-dataframe)
       - [Otros métodos útiles para analizar DataFrames](#otros-métodos-útiles-para-analizar-dataframes)
+    - [Clase 5. Indexado y manejo de archivos CSV](#clase-5-indexado-y-manejo-de-archivos-csv)
 
 
 ## Módulo 1. Comenzando con pandas
@@ -97,3 +98,12 @@ Ambas muestran los mismos resultados pero el primero es mucho más legible que e
   ```python
   df = df.astype({"Q1": float, "Q2": float})
   ```
+
+
+### Clase 5. Indexado y manejo de archivos CSV
+
+[Notebook de la clase][https://github.com/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb]
+
+<a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+
+[Información IPython Magic Commands](https://platzi.com/tutoriales/1794-pandas/6960-ipython-magics-commands/)
