@@ -102,7 +102,7 @@ Ambas muestran los mismos resultados pero el primero es mucho más legible que e
 
 ### Clase 5. Indexado y manejo de archivos CSV
 
-[Notebook de la clase][https://github.com/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb]
+[Notebook de la clase](https://github.com/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb)
 
 <a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
