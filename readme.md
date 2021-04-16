@@ -302,3 +302,4 @@ dataset.to_gbq(destination_table='nombre_de_la_tabla',
 
 <a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
+[Documención IO Tools de Pandas ](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)
