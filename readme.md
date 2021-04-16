@@ -15,6 +15,7 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
       - [SQL Server](#sql-server)
       - [MySQL / Oracle / Otras](#mysql--oracle--otras)
       - [Conectarse a bases de Datos en la nube](#conectarse-a-bases-de-datos-en-la-nube)
+    - [Clase 7. Ventajas y desventajas de los formatos de importar y guardado](#clase-7-ventajas-y-desventajas-de-los-formatos-de-importar-y-guardado)
 
 
 ## Módulo 1. Comenzando con pandas
@@ -293,3 +294,11 @@ dataset.to_gbq(destination_table='nombre_de_la_tabla',
   project_id = 'id_proyecto',
   if_exists = 'fail')
 ```
+
+
+### Clase 7. Ventajas y desventajas de los formatos de importar y guardado
+
+[Notebook de la Clase](https://github.com/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb)
+
+<a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+
