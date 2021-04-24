@@ -245,7 +245,7 @@ df = pd.read_sql(query_sql, sql_conn)
 df.head(5)
 ```
 
-_**ℹ Nota: **_ La librería sqlalchemy también soporta PostgreSQL y otras fuentes de datos.
+**ℹ Nota:** La librería sqlalchemy también soporta PostgreSQL y otras fuentes de datos.
 
 
 #### Conectarse a bases de Datos en la nube
