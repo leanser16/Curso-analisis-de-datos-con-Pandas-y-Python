@@ -21,6 +21,7 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
       - [Tamaño de Archivo](#tamaño-de-archivo)
       - [Tiempos de Carga y Lectura](#tiempos-de-carga-y-lectura)
       - [Consumo de memoria RAM](#consumo-de-memoria-ram)
+    - [Clase 9. Tipos de Variables que componen un DataFrame](#clase-9-tipos-de-variables-que-componen-un-dataframe)
 
 
 ## 📚 Módulo 1. Comenzando con pandas
@@ -50,11 +51,11 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
 
 <a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/dataframes.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
-Un **Data Frame** es una estructura bidimensional en la que las columnas corresponden a varias que categorías de datos que pueden ser de tipo texto, numérico, lógico, etc.
+Un **DataFrame** es una estructura bidimensional en la que las columnas corresponden a varias que categorías de datos que pueden ser de tipo texto, numérico, lógico, etc.
 
 _**Ejemplo:**_
 
-![Ejemplo data frame](https://i.ibb.co/YPdbWt9/data-frame.png)
+![Ejemplo DataFrame](https://i.ibb.co/YPdbWt9/data-frame.png)
 
 **Actualizar Pandas en Colab**
 
@@ -354,3 +355,11 @@ Si se hace una categorización de las variables, se tiene que **Parquet** sigue 
 - **HDF:** Gran soporte, **adecuado para grandes cantidades de datos**, rápido a costo de **alto costo computacional**.
 - **Parquet:** Puede igualar a HDF e inclusive **trabajar por chunks y en paralelo**.
 - **Pickle:** Es **práctico pero lento** con grandes cantidades de datos.
+
+
+### Clase 9. Tipos de Variables que componen un DataFrame
+
+[Notebook de la Clase](https://github.com/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/datatypes.ipynb)
+
+<a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/datatypes.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+
