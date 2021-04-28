@@ -3,7 +3,7 @@
 Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Python de Platzi](https://platzi.com/cursos/pandas/)
 
 - [Curso de Manipulación y Análisis de Datos con Pandas y Python](#curso-de-manipulación-y-análisis-de-datos-con-pandas-y-python)
-  - [Módulo 1. Comenzando con pandas](#módulo-1-comenzando-con-pandas)
+  - [📚 Módulo 1. Comenzando con pandas](#-módulo-1-comenzando-con-pandas)
     - [Clase 2. Primeros pasos con Google Colab: configuración del entorno de trabajo](#clase-2-primeros-pasos-con-google-colab-configuración-del-entorno-de-trabajo)
     - [Clase 3. Series e Indexación y selección de datos](#clase-3-series-e-indexación-y-selección-de-datos)
       - [Algunos métodos útiles para filtrar datos](#algunos-métodos-útiles-para-filtrar-datos)
@@ -16,9 +16,14 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
       - [MySQL / Oracle / Otras](#mysql--oracle--otras)
       - [Conectarse a bases de Datos en la nube](#conectarse-a-bases-de-datos-en-la-nube)
     - [Clase 7. Ventajas y desventajas de los formatos de importar y guardado](#clase-7-ventajas-y-desventajas-de-los-formatos-de-importar-y-guardado)
+  - [📚 Módulo 2. Funcionalidades básicas y esenciales de pandas](#-módulo-2-funcionalidades-básicas-y-esenciales-de-pandas)
+    - [Clase 8. Formatos de lectura para cargar y guardar DataFrames](#clase-8-formatos-de-lectura-para-cargar-y-guardar-dataframes)
+      - [Tamaño de Archivo](#tamaño-de-archivo)
+      - [Tiempos de Carga y Lectura](#tiempos-de-carga-y-lectura)
+      - [Consumo de memoria RAM](#consumo-de-memoria-ram)
 
 
-## Módulo 1. Comenzando con pandas
+## 📚 Módulo 1. Comenzando con pandas
 
 ### Clase 2. Primeros pasos con Google Colab: configuración del entorno de trabajo
 
@@ -302,4 +307,50 @@ dataset.to_gbq(destination_table='nombre_de_la_tabla',
 
 <a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/save_and_load.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
-[Documención IO Tools de Pandas ](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)
+[Documentación IO Tools de Pandas ](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html)
+
+
+## 📚 Módulo 2. Funcionalidades básicas y esenciales de pandas
+
+### Clase 8. Formatos de lectura para cargar y guardar DataFrames
+
+[Notebook de la Clase](https://github.com/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/formatos_cargar_guardar_datos.ipynb)
+
+<a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/formatos_cargar_guardar_datos.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+
+El siguiente análisis se realizó con un data set creado con datos aleatorios que contiene más de 100,000 registros y 30 columnas.
+
+Comparativa entre los diferentes formatos para cargar y guardar datos:
+
+#### Tamaño de Archivo
+
+El formato que ocupa menos espacio es **Parquet**. Hay 2 formatos que destacan por ser más pesados que los demás, esos son *CSV* y *JSON*.
+
+![Grafico del tamaño de archivo](https://i.ibb.co/Y2FydS9/serialized-file-size.png)
+
+Si se hace una categorización de las variables, los formatos binarios toman ventaja y reducen drásticamente el tamaño del archivo.
+
+![Grafico del tamaño de archivo después de categorizar las variables](https://i.ibb.co/PZCr2rJ/serialized-file-size-categories.png)
+
+#### Tiempos de Carga y Lectura
+
+Los formatos más lentos son *JSON* y *CSV*. **Parquet**, **Pickle** y **Feather** sobresalen por sus cortos tiempos de carga y lectura.
+
+![Grafico del tiempo de carga](https://i.ibb.co/yy6DXk7/time-to-save-load-a-Data-Frame.png)
+
+#### Consumo de memoria RAM
+
+El formato que consume (por mucho) más memoria RAM es *JSON*. Los formatos que destacan por su eficiencia en uso de la memoria son **Parquet**, **Feather** y **Pickle**.
+
+![Grafico Consumo de RAM](https://i.ibb.co/kDWbdrR/memory-consumption.png)
+
+Si se hace una categorización de las variables, se tiene que **Parquet** sigue siendo extremadamente eficiente.
+
+![Grafico del consumo de RAM después de categorizar variables](https://i.ibb.co/P97JSSW/memory-consumption-categories.png)
+
+**Conclusiones:**
+
+- **CSV y formatos String:** Son simples, requieren **alto costo computacional** y algo **lentos**.
+- **HDF:** Gran soporte, **adecuado para grandes cantidades de datos**, rápido a costo de **alto costo computacional**.
+- **Parquet:** Puede igualar a HDF e inclusive **trabajar por chunks y en paralelo**.
+- **Pickle:** Es **práctico pero lento** con grandes cantidades de datos.
