@@ -22,6 +22,7 @@ Notas y Código del [Curso de Manipulación y Análisis de Datos con Pandas y Py
       - [Tiempos de Carga y Lectura](#tiempos-de-carga-y-lectura)
       - [Consumo de memoria RAM](#consumo-de-memoria-ram)
     - [Clase 9. Tipos de Variables que componen un DataFrame](#clase-9-tipos-de-variables-que-componen-un-dataframe)
+    - [Clase 10. Estructuras de DataFrames en detalle](#clase-10-estructuras-de-dataframes-en-detalle)
 
 
 ## 📚 Módulo 1. Comenzando con pandas
@@ -363,3 +364,7 @@ Si se hace una categorización de las variables, se tiene que **Parquet** sigue 
 
 <a href="https://colab.research.google.com/github/bl00p1ng/Curso-analisis-de-datos-con-Pandas-y-Python/blob/main/datatypes.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
+
+### Clase 10. Estructuras de DataFrames en detalle
+
+Una ventaja de usar **variables categóricas** es que normalmente se necesita menos memoria RAM y también ocupan menos espacio los archivos.
